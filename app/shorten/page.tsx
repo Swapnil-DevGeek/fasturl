@@ -117,9 +117,9 @@ const Page = () => {
               <div className="mt-4">
                 <p>Short URL:</p>
                 <Snippet symbol="" className='bg-blue-500/40 w-full rounded-2xl my-4 px-3 py-1' color='primary'>
-                  <Link className='hover:underline transition-all duration-75' href={"https://fasturl-o9olxukwb-swapnil-sonis-projects.vercel.app/" + response.shorturl} 
+                  <Link className='hover:underline transition-all duration-75' href={"https://fasturl.in/" + response.shorturl} 
                   target='_blank'>
-                    {"https://fasturl-o9olxukwb-swapnil-sonis-projects.vercel.app/" + response.shorturl}</Link>
+                    {"https://fasturl.in/" + response.shorturl}</Link>
                 </Snippet>
               </div>
             )}
