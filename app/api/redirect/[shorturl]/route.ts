@@ -1,8 +1,9 @@
+//@ts-ignore
 import clientPromise from "@/lib/mongodb";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-  try {
+  try {//@ts-ignore
     const client = await clientPromise;
     const db = client.db("fasturl");
     const collection = db.collection("url");
