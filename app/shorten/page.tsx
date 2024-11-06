@@ -117,9 +117,9 @@ const Page = () => {
               <div className="mt-4">
                 <p>Short URL:</p>
                 <Snippet symbol="" className='bg-blue-500/40 w-full rounded-2xl my-4 px-3 py-1' color='primary'>
-                  <Link className='hover:underline transition-all duration-75' href={process.env.NEXT_PUBLIC_HOST + "/" + response.shorturl} 
+                  <Link className='hover:underline transition-all duration-75' href={process.env.ROUTE + "/" + response.shorturl} 
                   target='_blank'>
-                    {process.env.NEXT_PUBLIC_HOST + "/" + response.shorturl}</Link>
+                    {process.env.ROUTE + "/" + response.shorturl}</Link>
                 </Snippet>
               </div>
             )}
