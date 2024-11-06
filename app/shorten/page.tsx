@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Snippet } from "@nextui-org/snippet";
 import { Button } from "@nextui-org/button";
+import Link from 'next/link';
 
 const Page = () => {
   const [url, setUrl] = useState('');
@@ -62,7 +63,7 @@ const Page = () => {
       } else {
         setResponse({ message: 'Error: ' + data.message, error: data.error });
       }
-    } catch (error) {
+    } catch (error) {//@ts-ignore
       setResponse({ message: 'Failed to create short URL', error: error.message });
     } finally {
       setUrl("");
@@ -116,7 +117,9 @@ const Page = () => {
               <div className="mt-4">
                 <p>Short URL:</p>
                 <Snippet symbol="" className='bg-blue-500/40 w-full rounded-2xl my-4 px-3 py-1' color='primary'>
-                  {process.env.NEXT_PUBLIC_HOST + "/" + response.shorturl}
+                  <Link className='hover:underline transition-all duration-75' href={process.env.NEXT_PUBLIC_HOST + "/" + response.shorturl} 
+                  target='_blank'>
+                    {process.env.NEXT_PUBLIC_HOST + "/" + response.shorturl}</Link>
                 </Snippet>
               </div>
             )}

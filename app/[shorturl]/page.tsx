@@ -15,15 +15,20 @@ const RedirectPage = () => {
 
     const fetchUrl = async () => {
       try {
-        const res = await fetch(`/api/redirect${shorturl}`);
+        const res = await fetch(`/api/redirect${shorturl}`,{
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ shorturl }),
+        });
         const data = await res.json();
-
+        
         if (res.status === 200 && data.url) {
             window.location.href = data.url;
         } else {
             alert(data.message || 'Something went wrong');
         }
       } catch (error) {
+        console.log(error)
         alert('Failed to redirect');
       } finally {
         setRedirecting(false);

@@ -1,8 +1,10 @@
+//@ts-ignore
 import clientPromise from "@/lib/mongodb";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-    try {
+
+    try {//@ts-ignore
         const client = await clientPromise;
         const db = client.db('fasturl');
         const collection = db.collection("url");
@@ -18,7 +20,7 @@ export async function POST(req: NextRequest) {
         // Insert the new URL into the collection
         await collection.insertOne({ url, shorturl });
         return NextResponse.json({ message: "URL created", url, shorturl }, { status: 201 }); // Include the URL in the response
-    } catch (error) {
+    } catch (error) {//@ts-ignore
         return NextResponse.json({ message: "Internal server error", error: error.message }, { status: 500 }); 
     }
 }
