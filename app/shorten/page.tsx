@@ -232,7 +232,7 @@ const Page = () => {
                   className="bg-gray-800/70 border border-gray-700 w-full rounded-xl my-4 px-3 py-3"
                   classNames={{
                     base: "bg-gray-800/70 border border-gray-700",
-                    copy: "text-gray-400 hover:text-white",
+                    copyIcon: "text-gray-400 hover:text-white",
                     pre: "text-gray-300"
                   }}
                 >
